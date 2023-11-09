@@ -10,8 +10,6 @@ class MenuList(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['meals'] = MEAL_TYPE
-        data = list(context['object_list'])
-        print(data)
         return context
 
 
