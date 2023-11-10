@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Item
+from .models import ItemModel
 
 class MenuItemAdmin(admin.ModelAdmin):
     list_display = ('meal', 'status')
@@ -7,4 +7,4 @@ class MenuItemAdmin(admin.ModelAdmin):
     search_fields = ('meal', 'description')
 
 
-admin.site.register(Item, MenuItemAdmin)
+admin.site.register(ItemModel, MenuItemAdmin)

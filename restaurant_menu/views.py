@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Item, MEAL_TYPE
+from .models import ItemModel, MEAL_TYPE
 
 
-class MenuList(generic.ListView):
-    queryset = Item.objects.order_by("-date_created")
+class MenuListView(generic.ListView):
+    # queryset = Item.objects.order_by("-date_created")
+    queryset = ItemModel.objects.order_by("meal")
     template_name = "index.html"
 
     def get_context_data(self, **kwargs):
@@ -13,6 +14,6 @@ class MenuList(generic.ListView):
         return context
 
 
-class MenuItemDetail(generic.DetailView):
-    model = Item
+class MenuItemDetailView(generic.DetailView):
+    model = ItemModel
     template_name = "menu_item_detail.html"
