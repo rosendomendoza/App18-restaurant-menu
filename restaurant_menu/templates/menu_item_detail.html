@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>{{ object.meal }}</h1>
-    <p>{{ object.description }}</p>
-    <p>{{ object.price }}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-primary"><u>{{ object.meal }}</u></h1>
+        <h3>{{ object.description }}</h3>
+        <p class="badge bg-primary rounded-pill">€ {{ object.price }}</p>
+        <p>
+    </div>
+{% endblock content %}
