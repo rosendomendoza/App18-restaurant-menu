@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="container">
-    <h1>Restaurant Menu </h1>
-        <u class="list-group list-group-flush">
+    <h1 class="text-center">Restaurant Menu </h1>
+        <ul class="list-group list-group-flush">
             {% for meal in meals %}
                 <h2 class="pt-5">{{ meal.1 }}</h2>
                 {% for object in object_list %}
@@ -18,12 +19,13 @@
                                 <span class="badge bg-primary rounded-pill">{{ object.price }}</span>
                             </li>
                         {% endif %}
-                        <li class="list-group-item pt-0">
-                            <p>{{ object.description }}.</p>
+                        <li class="list-group-item pt-0 m-2">
+
+                            <p><em>{{ object.description }}</em></p>
                         </li>
                     {% endif %}
                 {% endfor %}
             {% endfor %}
-        </u>
+        </ul>
 </div>
 {% endblock content %}

@@ -17,7 +17,9 @@ STATUS = (
 class ItemModel(models.Model):
     meal = models.CharField(max_length=1000, unique=True)
     description = models.CharField(max_length=2000)
+    ingredients = models.CharField(max_length=1000, default="")
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    image = models.CharField(max_length=1000, default="")
     meal_type = models.CharField(max_length=20, choices=MEAL_TYPE)
     author = models.ForeignKey(User, on_delete=models.PROTECT)
     status = models.IntegerField(choices=STATUS, default=0)
