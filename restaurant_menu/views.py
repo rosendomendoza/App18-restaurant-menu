@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import ItemModel, MEAL_TYPE
+from .admin import MenuItemAdmin
 
 
 class MenuListView(generic.ListView):
@@ -17,3 +18,6 @@ class MenuListView(generic.ListView):
 class MenuItemDetailView(generic.DetailView):
     model = ItemModel
     template_name = "menu_item_detail.html"
+
+def admin():
+    admin.site.register(ItemModel, MenuItemAdmin)
